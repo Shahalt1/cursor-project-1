@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor - The World's Best IDE</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #6366f1;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #6366f1;
+        }
+        .hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #222;
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #6366f1;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+            margin-right: 15px;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            background-color: #4f46e5;
+        }
+        .secondary-button {
+            display: inline-block;
+            background-color: white;
+            color: #6366f1;
+            border: 2px solid #6366f1;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .secondary-button:hover {
+            transform: translateY(-3px);
+        }
+        .features {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            flex-wrap: wrap;
+        }
+        .feature {
+            flex: 1;
+            min-width: 300px;
+            padding: 2rem;
+            margin: 1rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #f0f1ff;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            color: #6366f1;
+            font-size: 1.5rem;
+        }
+        footer {
+            background-color: #ffffff;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        .footer-links a {
+            text-decoration: none;
+            color: #555;
+        }
+        .footer-links a:hover {
+            color: #6366f1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon">C</div>
+            <span style="font-weight: 600; font-size: 1.2rem;">Cursor</span>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">Documentation</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>The World's Best IDE</h1>
+            <p class="subtitle">Supercharge your coding with AI-powered features that help you code faster and more efficiently.</p>
+            <a href="#" class="cta-button">Download Now</a>
+            <a href="#" class="secondary-button">Learn More</a>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>Experience unmatched performance with our optimized codebase that ensures a responsive editing experience, even for large projects.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <h3>AI-Powered</h3>
+                <p>Leverage cutting-edge AI to get intelligent code suggestions, bug fixes, and refactoring options as you type.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔌</div>
+                <h3>Extensible</h3>
+                <p>Customize your IDE with thousands of extensions and themes to create the perfect development environment for your workflow.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <p>&copy; 2023 Cursor. All rights reserved.</p>
+    </footer>
+</body>
+</html> 
