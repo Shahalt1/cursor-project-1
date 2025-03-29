@@ -12,6 +12,7 @@
             background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
         header {
             background-color: #ffffff;
@@ -20,6 +21,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         .logo {
             display: flex;
@@ -147,6 +151,159 @@
         .footer-links a:hover {
             color: #6366f1;
         }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #222;
+            padding-top: 70px;
+        }
+        .features-page {
+            background-color: #f0f1ff;
+            padding: 3rem 2rem;
+            margin-top: 2rem;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 2rem;
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .feature-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Dialog Styles */
+        .dialog-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .dialog-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            padding: 2rem;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+        }
+        
+        .dialog-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .dialog-close:hover {
+            color: #6366f1;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #444;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+        }
+        
+        .form-submit {
+            background-color: #6366f1;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            align-self: flex-start;
+        }
+        
+        .form-submit:hover {
+            background-color: #4f46e5;
+        }
+        
+        .dialog-title {
+            font-size: 1.75rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        
+        .success-message {
+            display: none;
+            text-align: center;
+            color: #10b981;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -157,10 +314,10 @@
         </div>
         <nav>
             <a href="#">Home</a>
-            <a href="#">Features</a>
+            <a href="#features-section">Features</a>
             <a href="#">Pricing</a>
             <a href="#">Documentation</a>
-            <a href="#">Contact</a>
+            <a href="#" id="contact-link">Contact</a>
         </nav>
     </header>
 
@@ -169,7 +326,7 @@
             <h1>The World's Best IDE</h1>
             <p class="subtitle">Supercharge your coding with AI-powered features that help you code faster and more efficiently.</p>
             <a href="#" class="cta-button">Download Now</a>
-            <a href="#" class="secondary-button">Learn More</a>
+            <a href="#features-section" class="secondary-button">Learn More</a>
         </section>
 
         <section class="features">
@@ -189,6 +346,42 @@
                 <p>Customize your IDE with thousands of extensions and themes to create the perfect development environment for your workflow.</p>
             </div>
         </section>
+
+        <section id="features-section" class="features-page">
+            <h2 class="section-title">Our Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Code Completion">
+                    <h3>Smart Code Completion</h3>
+                    <p>Our AI-powered code completion understands context and suggests entire code blocks, not just individual tokens.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Real-time Collaboration">
+                    <h3>Real-time Collaboration</h3>
+                    <p>Code together with your team in real-time with seamless collaboration features that keep everyone in sync.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Code Refactoring">
+                    <h3>Intelligent Refactoring</h3>
+                    <p>Automatically refactor your code with intelligent suggestions that improve readability and performance.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80" alt="Integrated Terminal">
+                    <h3>Integrated Terminal</h3>
+                    <p>Access your command line directly within the IDE for seamless workflow between coding and running commands.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Debug Tools">
+                    <h3>Advanced Debugging</h3>
+                    <p>Find and fix bugs faster with our powerful debugging tools that provide deep insights into your code execution.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" alt="Version Control">
+                    <h3>Integrated Version Control</h3>
+                    <p>Work with Git and other version control systems directly within the IDE with visual diff tools and merge conflict resolution.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -201,5 +394,80 @@
         </div>
         <p>&copy; 2023 Cursor. All rights reserved.</p>
     </footer>
+    
+    <!-- Contact Dialog -->
+    <div class="dialog-overlay" id="contact-dialog">
+        <div class="dialog-container">
+            <button class="dialog-close" id="dialog-close">&times;</button>
+            <h2 class="dialog-title">Contact Us</h2>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
+            <p class="success-message" id="success-message">Your message has been sent successfully!</p>
+        </div>
+    </div>
+    
+    <script>
+        // Contact Dialog Functionality
+        const contactLink = document.getElementById('contact-link');
+        const contactDialog = document.getElementById('contact-dialog');
+        const dialogClose = document.getElementById('dialog-close');
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+        
+        contactLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            contactDialog.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when dialog is open
+        });
+        
+        dialogClose.addEventListener('click', function() {
+            contactDialog.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+            // Reset form
+            contactForm.style.display = 'flex';
+            successMessage.style.display = 'none';
+            contactForm.reset();
+        });
+        
+        // Close dialog when clicking outside
+        contactDialog.addEventListener('click', function(e) {
+            if (e.target === contactDialog) {
+                contactDialog.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                // Reset form
+                contactForm.style.display = 'flex';
+                successMessage.style.display = 'none';
+                contactForm.reset();
+            }
+        });
+        
+        // Form submission
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show the success message
+            contactForm.style.display = 'none';
+            successMessage.style.display = 'block';
+            
+            // Reset form after 3 seconds and close dialog
+            setTimeout(function() {
+                contactDialog.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                // Reset form
+                contactForm.style.display = 'flex';
+                successMessage.style.display = 'none';
+                contactForm.reset();
+            }, 3000);
+        });
+    </script>
 </body>
 </html> 
