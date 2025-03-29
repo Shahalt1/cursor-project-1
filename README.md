@@ -2,7 +2,7 @@
 
 A clean, modern landing page for Cursor IDE created with HTML and inline CSS.
 
-**[View Live Demo](https://shahalt1.github.io/cursor-project-1/)**
+**[View Live Demo](https://shahalt1.github.io/cursor-webapp/)**
 
 ## Features
 
