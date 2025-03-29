@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Cursor IDE</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #6366f1;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #6366f1;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .sidebar h3 {
+            margin-top: 0;
+            color: #333;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar li {
+            margin-bottom: 0.5rem;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #555;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .sidebar a:hover {
+            background-color: #f0f1ff;
+            color: #6366f1;
+        }
+        .content {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 2rem;
+        }
+        .content h1 {
+            margin-top: 0;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .content h2 {
+            color: #444;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        .content p {
+            margin-bottom: 1rem;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+        }
+        .note {
+            background-color: #f0f1ff;
+            border-left: 4px solid #6366f1;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        footer {
+            background-color: #ffffff;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        .footer-links a {
+            text-decoration: none;
+            color: #555;
+        }
+        .footer-links a:hover {
+            color: #6366f1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon">C</div>
+            <span style="font-weight: 600; font-size: 1.2rem;">Cursor</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#features-section">Features</a>
+            <a href="#">Pricing</a>
+            <a href="documentation.html">Documentation</a>
+            <a href="#" id="contact-link">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>Getting Started</h3>
+            <ul>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#quick-start">Quick Start</a></li>
+                <li><a href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
+            </ul>
+            <h3>Features</h3>
+            <ul>
+                <li><a href="#ai-code-completion">AI Code Completion</a></li>
+                <li><a href="#real-time-collaboration">Real-time Collaboration</a></li>
+                <li><a href="#debugging">Debugging</a></li>
+                <li><a href="#extensions">Extensions</a></li>
+            </ul>
+            <h3>Advanced</h3>
+            <ul>
+                <li><a href="#configuration">Configuration</a></li>
+                <li><a href="#keybindings">Custom Keybindings</a></li>
+                <li><a href="#themes">Themes</a></li>
+                <li><a href="#api">API Reference</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Cursor Documentation</h1>
+            <p>Welcome to the official documentation for Cursor IDE. This guide will help you get started with Cursor and make the most of its powerful features.</p>
+            
+            <h2 id="installation">Installation</h2>
+            <p>Cursor IDE is available for Windows, macOS, and Linux. Download the latest version from our website and follow the installation instructions for your operating system.</p>
+            
+            <h3>System Requirements</h3>
+            <ul>
+                <li>Windows 10 or later</li>
+                <li>macOS 10.15 or later</li>
+                <li>Ubuntu 18.04 or later</li>
+                <li>4GB RAM minimum (8GB recommended)</li>
+                <li>1GB free disk space</li>
+            </ul>
+            
+            <h2 id="quick-start">Quick Start</h2>
+            <p>After installing Cursor, follow these steps to get started:</p>
+            <ol>
+                <li>Launch Cursor IDE from your applications menu</li>
+                <li>Create a new project or open an existing one</li>
+                <li>Start coding and experience the power of AI assistance</li>
+            </ol>
+            
+            <div class="note">
+                <strong>Note:</strong> Cursor automatically saves your work as you type, so you don't need to worry about losing your progress.
+            </div>
+            
+            <h2 id="keyboard-shortcuts">Keyboard Shortcuts</h2>
+            <p>Here are some essential keyboard shortcuts to help you be more productive:</p>
+            
+            <pre>
+Ctrl+Space      AI code completion
+Ctrl+P          Quick open file
+Ctrl+Shift+P    Command palette
+Ctrl+F          Find in file
+Ctrl+Shift+F    Find in project
+F5              Start debugging
+F9              Toggle breakpoint
+Ctrl+`          Toggle terminal
+            </pre>
+            
+            <h2 id="ai-code-completion">AI Code Completion</h2>
+            <p>Cursor's AI-powered code completion is its most powerful feature. It understands the context of your code and offers intelligent suggestions as you type.</p>
+            
+            <h3>Using AI Completion</h3>
+            <p>Simply start typing your code, and Cursor will suggest completions automatically. Press Tab to accept a suggestion, or continue typing to refine it.</p>
+            
+            <p>You can also trigger AI completions manually by pressing <code>Ctrl+Space</code> at any point while coding.</p>
+            
+            <h3>Example</h3>
+            <pre>
+function calculateTotal(items) {
+    // Cursor will suggest the following code:
+    return items.reduce((total, item) => {
+        return total + item.price * item.quantity;
+    }, 0);
+}
+            </pre>
+            
+            <h2 id="real-time-collaboration">Real-time Collaboration</h2>
+            <p>Cursor makes it easy to collaborate with your team in real-time. Multiple users can edit the same file simultaneously, with changes synced instantly.</p>
+            
+            <h3>Starting a Collaboration Session</h3>
+            <p>To start collaborating:</p>
+            <ol>
+                <li>Click on the "Share" button in the top-right corner</li>
+                <li>Copy the generated link and send it to your collaborators</li>
+                <li>When they open the link, they'll join your session automatically</li>
+            </ol>
+            
+            <h2 id="debugging">Debugging</h2>
+            <p>Cursor includes a powerful debugger that helps you find and fix issues in your code.</p>
+            
+            <h3>Basic Debugging</h3>
+            <p>To start debugging:</p>
+            <ol>
+                <li>Set breakpoints by clicking in the gutter next to line numbers</li>
+                <li>Press F5 to start debugging</li>
+                <li>Use the debug console to inspect variables and evaluate expressions</li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <p>&copy; 2023 Cursor. All rights reserved.</p>
+    </footer>
+</body>
+</html> 
